@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Ancestry</title>
+	  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Ancestor Surname Browser</h1>
+			<div class="login">
+				<p>Login to FamilySearch to see your closest deceased ancestors and their surnames.</p>
+				<a onclick="fs.oauthRedirect()" href="javascript:void(0);" class="btn btn-primary">Login</a>
+			</div>
+
+			<ul class="tree"></ul>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://unpkg.com/fs-js-lite@latest/dist/FamilySearch.min.js"></script>
+		<script src="logic.js"></script>
+	</body>
+</html>
