@@ -2,8 +2,8 @@ let user = {};
 var fs = new FamilySearch({
   environment: 'production',
   appKey: 'a02j000000KTRjpAAH',
-  // redirectUri: 'https://misbach.github.io/fs-ancestors/'
-  redirectUri: 'http://localhost:5000/'
+  redirectUri: 'https://misbach.github.io/fs-surnames/'
+  // redirectUri: 'http://localhost:5000/'
 });
 
 // Finish oauth flow by obtaining access_token
