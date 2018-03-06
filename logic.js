@@ -19,14 +19,14 @@ fs.oauthResponse(function() {
 
 			// Display Horizon along with surnames
 			for (var i = 0; i < user.horizon.length; i++) {
-				let portrait = "https://api.familysearch.org/platform/tree/persons/"+user.horizon[i].pid+"/portrait?access_token="+fs.accessToken;
+				let portrait = "https://api.familysearch.org/platform/tree/persons/"+user.horizon[i].pid+"/portrait?default=http://fsicons.org/wp-content/uploads/2014/10/gender-unknown-circle-2XL.png&access_token="+fs.accessToken;
 				$('.tree').append('<li><a href="https://www.familysearch.org/tree/person/'+user.horizon[i].pid+'" target="_blank"><img class="portrait" src="'+portrait+'"><h3 class="ancestor">'+user.horizon[i].name+'</h3></a><br /><div class="'+user.horizon[i].pid+' surnames"></div></li>');
 
 				// Get surnames for each Horizon person
 				fs.get('/platform/tree/ancestry?generations=4&person='+user.horizon[i].pid, function(error, rsp) {
 					let surnames = {};
 					// Get surnames
-					for (var i = 0; i < rsp.data.persons.length; i++) {
+					for (var i = 2; i < rsp.data.persons.length; i++) {
 						if (rsp.data.persons[i].names[0].nameForms[0].parts[1]) {
 							let surname = rsp.data.persons[i].names[0].nameForms[0].parts[1].value;
 							if (surnames[surname] == undefined) surnames[surname] = rsp.data.persons[i].id;
